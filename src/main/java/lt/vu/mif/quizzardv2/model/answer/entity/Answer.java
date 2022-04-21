@@ -1,5 +1,7 @@
 package lt.vu.mif.quizzardv2.model.answer.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -17,7 +19,9 @@ import javax.persistence.Table;
 
 @Setter
 @Getter
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "answer")
 public class Answer {
@@ -27,6 +31,9 @@ public class Answer {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    @Column(name = "question_id")
+    private Long questionId;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "question_id")
     private Question question;
@@ -35,5 +42,5 @@ public class Answer {
     private String answer;
 
     @Column(name = "correct")
-    private Boolean correct;
+    private boolean correct;
 }

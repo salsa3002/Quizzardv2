@@ -1,20 +1,13 @@
-package lt.vu.mif.quizzardv2.bl.question.json;
+package lt.vu.mif.quizzardv2.bl.questionAnswer.json.question;
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Getter;
 import lt.vu.mif.quizzardv2.model.question.entity.Question;
-import lt.vu.mif.quizzardv2.model.question.enums.CategoryEnum;
 
-@Getter
 @Builder
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class QuestionResponse {
 
-    Long id;
-    String question;
-    CategoryEnum category;
+    private Long id;
+    private String question;
 
     public static QuestionResponse of(Question entity) {
         if (entity == null) {
@@ -24,7 +17,6 @@ public class QuestionResponse {
         return QuestionResponse.builder()
                 .id(entity.getId())
                 .question(entity.getQuestion())
-                .category(entity.getCategory())
                 .build();
     }
 }

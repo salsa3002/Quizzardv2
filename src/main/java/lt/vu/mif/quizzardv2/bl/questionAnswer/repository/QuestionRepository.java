@@ -1,4 +1,4 @@
-package lt.vu.mif.quizzardv2.bl.question.repository;
+package lt.vu.mif.quizzardv2.bl.questionAnswer.repository;
 
 import lt.vu.mif.quizzardv2.bl.utils.GenericRepository;
 import lt.vu.mif.quizzardv2.model.question.entity.Question;
